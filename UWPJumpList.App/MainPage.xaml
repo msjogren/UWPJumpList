@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="Jayway.UWPJumpList.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Jayway.UWPJumpList"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <NavigationView x:Name="NavViewMenu" IsSettingsVisible="False" SelectionChanged="NavViewMenu_SelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Uid="GreenNavItem" Content="[Green]" Tag="Green">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE790;" Foreground="Green" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem x:Uid="RedNavItem" Content="[Red]" Tag="Red">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE790;" Foreground="Red" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem x:Uid="BlueNavItem" Content="[Blue]" Tag="Blue">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE790;" Foreground="Blue" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem x:Uid="YellowNavItem" Content="[Yellow]" Tag="Yellow">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE790;" Foreground="Yellow" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <NavigationView.PaneFooter>
+                <TextBlock x:Name="AppVersionLabel" Text="Version" Margin="10" />
+            </NavigationView.PaneFooter>
+            
+            <Frame x:Name="ContentFrame">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition />
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </NavigationView>
+    </Grid>
+</Page>
